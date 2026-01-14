@@ -3,214 +3,205 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kaiwen Li | Portfolio</title>
+    <title>Kaiwen Li | Profile</title>
     <style>
-        :root {
-            --primary: #c41e3a; /* CMU Red */
-            --dark: #1a1a1a;
-            --light: #f4f4f4;
-            --text: #333;
-        }
-
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
             line-height: 1.6;
-            color: var(--text);
-            margin: 0;
-            padding: 0;
-            background-color: var(--light);
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background-color: #fdfdfd;
         }
 
         header {
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('IMG_0594.jpeg');
-            background-size: cover;
-            background-position: center;
-            height: 60vh;
-            color: white;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
+            border-bottom: 3px solid #c41e3a; /* CMU Red */
+            padding-bottom: 20px;
+            margin-bottom: 30px;
         }
 
-        .profile-img {
-            width: 180px;
-            height: 180px;
-            border-radius: 50%;
-            border: 4px solid white;
-            object-fit: cover;
-            margin-bottom: 1rem;
-        }
-
-        nav {
-            background: var(--dark);
-            color: white;
-            padding: 1rem;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            justify-content: center;
+        h1 {
             margin: 0;
-            padding: 0;
+            font-size: 2.5em;
+            letter-spacing: -1px;
+            color: #1a1a1a;
         }
 
-        nav li { margin: 0 1.5rem; }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
+        .subtitle {
+            font-size: 1.2em;
+            color: #666;
+            margin-top: 5px;
         }
 
-        .container {
-            max-width: 1000px;
-            margin: 2rem auto;
-            padding: 0 1rem;
+        section {
+            margin-bottom: 40px;
         }
-
-        section { margin-bottom: 3rem; }
 
         h2 {
-            border-bottom: 2px solid var(--primary);
-            padding-bottom: 0.5rem;
-            color: var(--dark);
+            font-size: 1.5em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #c41e3a;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 5px;
         }
 
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
+        .entry {
+            margin-bottom: 20px;
         }
 
-        .card {
-            background: white;
-            padding: 1.5rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-
-        .badge {
-            background: var(--primary);
-            color: white;
-            padding: 0.2rem 0.6rem;
-            border-radius: 4px;
-            font-size: 0.8rem;
+        .entry-header {
+            display: flex;
+            justify-content: space-between;
             font-weight: bold;
+            color: #1a1a1a;
+        }
+
+        .entry-sub {
+            font-style: italic;
+            color: #555;
+            margin-bottom: 5px;
+        }
+
+        ul {
+            padding-left: 20px;
+            margin-top: 5px;
+        }
+
+        li {
+            margin-bottom: 5px;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
         }
 
         footer {
-            background: var(--dark);
-            color: white;
+            margin-top: 50px;
+            font-size: 0.9em;
+            color: #888;
             text-align: center;
-            padding: 2rem 0;
-            margin-top: 3rem;
+            border-top: 1px solid #eee;
+            padding-top: 20px;
+        }
+
+        a {
+            color: #c41e3a;
+            text-decoration: none;
         }
     </style>
 </head>
 <body>
 
 <header>
-    <img src="IMG_1944.jpeg" alt="Kaiwen Li" class="profile-img">
     <h1>Kaiwen Li</h1>
-    <p>Mathematics Student at Carnegie Mellon University</p>
+    <div class="subtitle">Mathematics Student at Carnegie Mellon University</div>
 </header>
 
-<nav>
+<section id="education">
+    <h2>Education</h2>
+    <div class="entry">
+        <div class="entry-header">
+            <span>Carnegie Mellon University</span>
+            <span>Expected May 2029</span>
+        </div>
+        [cite_start]<div class="entry-sub">Bachelor of Science in Mathematics, Discrete Mathematics and Logic [cite: 7]</div>
+        [cite_start]<p>Studying at the Mellon College of Science in Pittsburgh, PA[cite: 5].</p>
+    </div>
+
+    <div class="entry">
+        <div class="entry-header">
+            <span>Stanford University Mathematics Camp (SUMaC)</span>
+            <span>July 2024</span>
+        </div>
+        [cite_start]<p>Investigated Abstract Algebra and Number Theory, including cryptography and symmetry in structures[cite: 13].</p>
+    </div>
+
+    <div class="entry">
+        <div class="entry-header">
+            <span>Lord Byng Secondary School</span>
+            <span>Graduated 2025</span>
+        </div>
+        <div class="entry-sub">Vancouver, BC | [cite_start]GPA: 96/100 [cite: 8]</div>
+        <ul>
+            [cite_start]<li>Named to the Principal's List for the 2022-2023 and 2023-2024 academic years[cite: 9].</li>
+        </ul>
+    </div>
+</section>
+
+<section id="honors">
+    <h2>Honors & Certifications</h2>
     <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#education">Education</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#honors">Honors</a></li>
+        [cite_start]<li>USAMO Qualifier (2024)[cite: 42].</li>
+        [cite_start]<li>Three-time AIME Qualifier (2022, 2023, 2024) with a highest score of 12/15[cite: 41].</li>
+        [cite_start]<li>Two-time AMC 12 Honor Roll of Distinction (2022, 2023)[cite: 43].</li>
+        [cite_start]<li>Euclid Mathematics Contest: Scored 89, ranking in the Top 2.5% of 20,000+ participants[cite: 45].</li>
+        [cite_start]<li>Certified CASI Snowboard Instructor[cite: 45].</li>
     </ul>
-</nav>
+</section>
 
-<div class="container">
-    
-    <section id="about">
-        <h2>About Me</h2>
-        <p>
-            I am a Mathematics student at <strong>Carnegie Mellon University</strong> [cite: 5] with a passion for Discrete Mathematics and Logic[cite: 7]. 
-            Originally from Vancouver, BC [cite: 8], I have balanced my academic rigors in abstract algebra and number theory [cite: 13] 
-            with active community involvement and a love for the outdoors as a certified snowboard instructor[cite: 22, 45].
-        </p>
-    </section>
-
-    <section id="education">
-        <h2>Education</h2>
-        <div class="grid">
-            <div class="card">
-                <h3>Carnegie Mellon University [cite: 5]</h3>
-                <p><strong>B.S. in Mathematics</strong> [cite: 7]</p>
-                <p>Expected May 2029 [cite: 6]</p>
-                <p><em>Focus: Discrete Mathematics and Logic</em> [cite: 7]</p>
-            </div>
-            <div class="card">
-                <h3>Stanford University (SUMaC) [cite: 10]</h3>
-                <p>Mathematics Camp (July 2024) [cite: 12]</p>
-                <p>Investigated Abstract Algebra, Cryptography, and Symmetry[cite: 13].</p>
-            </div>
-            <div class="card">
-                <h3>Lord Byng Secondary School [cite: 8]</h3>
-                <p>GPA: 96/100 [cite: 8]</p>
-                <p>Principal's List (2022-2024) [cite: 9]</p>
-            </div>
+<section id="experience">
+    <h2>Leadership & Experience</h2>
+    <div class="entry">
+        <div class="entry-header">
+            <span>Lord Byng Math Contest Club</span>
+            <span>Sept 2022 – Jun 2025</span>
         </div>
-    </section>
+        <div class="entry-sub">President</div>
+        <ul>
+            [cite_start]<li>Led a club consisting of over 140 members[cite: 37].</li>
+            [cite_start]<li>Created instructional content and produced educational videos[cite: 38].</li>
+            [cite_start]<li>Organized the Descartes Interschool Contest for more than 50 participants[cite: 38].</li>
+        </ul>
+    </div>
 
-    <section id="experience">
-        <h2>Work & Leadership</h2>
-        <div class="card">
-            <h3>Snowboard Instructor (Self-Employed) [cite: 22]</h3>
-            <p><em>Vancouver, BC | 2023 - Present</em> [cite: 25]</p>
+    <div class="entry">
+        <div class="entry-header">
+            <span>Kerrisdale Academy</span>
+            <span>Vancouver, BC</span>
+        </div>
+        <div class="entry-sub">Teaching Assistant</div>
+        <ul>
+            [cite_start]<li>Assisted instruction for AP Statistics, AP Calculus BC, and AP Physics C[cite: 30].</li>
+            [cite_start]<li>Provided individual tutoring and graded student assignments[cite: 30].</li>
+        </ul>
+    </div>
+
+    <div class="entry">
+        <div class="entry-header">
+            <span>Snowboard Instructor (Self-Employed)</span>
+            <span>2023 – Present</span>
+        </div>
+        [cite_start]<p>Provide certified instruction and advanced training focused on carving and park abilities[cite: 23, 25].</p>
+    </div>
+</section>
+
+<section id="skills">
+    <h2>Technical Skills</h2>
+    <div class="skills-grid">
+        <div>
+            <strong>Computing & Math</strong>
             <ul>
-                <li>Certified CASI Level 1 Instructor[cite: 45].</li>
-                <li>Provided advanced training in carving and park abilities[cite: 23].</li>
+                [cite_start]<li>Java, Python, C++, and LaTeX[cite: 49].</li>
+                [cite_start]<li>Discrete Mathematics and Number Theory[cite: 49].</li>
+                [cite_start]<li>Data Analysis[cite: 49].</li>
             </ul>
         </div>
-        <br>
-        <div class="card">
-            <h3>President, Math Contest Club [cite: 37]</h3>
-            <p><em>Lord Byng Secondary | 2022 - 2025</em> [cite: 36]</p>
+        <div>
+            <strong>Languages</strong>
             <ul>
-                <li>Led a club of over 140 members[cite: 37].</li>
-                <li>Organized the Descartes Interschool Contest for 50+ participants[cite: 38].</li>
-                <li>Produced instructional videos and prepared complex meeting notes[cite: 38].</li>
+                [cite_start]<li>Fluent in Mandarin and English[cite: 48].</li>
+                [cite_start]<li>Limited Working Proficiency in Spanish[cite: 48].</li>
             </ul>
         </div>
-    </section>
-
-    <section id="honors">
-        <h2>Honors & Skills</h2>
-        <div class="grid">
-            <div class="card">
-                <h3>Mathematics Honors</h3>
-                <ul>
-                    <li>USAMO Qualifier (2024) [cite: 42]</li>
-                    <li>3x AIME Qualifier (Max score: 12/15) [cite: 41]</li>
-                    <li>AMC 12 Honor Roll of Distinction (2022, 2023) [cite: 43]</li>
-                    <li>Euclid Contest: Scored 89 (Top 2.5%) [cite: 45]</li>
-                </ul>
-            </div>
-            <div class="card">
-                <h3>Technical & Languages</h3>
-                <p><strong>Coding:</strong> Java, Python, C++, LaTeX [cite: 49]</p>
-                <p><strong>Languages:</strong> English (Fluent), Mandarin (Fluent), Spanish (Limited) [cite: 48]</p>
-                <p><strong>Core Math:</strong> Linear Algebra, Multivariable Calculus, Number Theory [cite: 49, 50]</p>
-            </div>
-        </div>
-    </section>
-
-</div>
+    </div>
+</section>
 
 <footer>
-    <p>Kaiwen Li | <a href="mailto:kl5@andrew.cmu.edu" style="color: white;">kl5@andrew.cmu.edu</a> [cite: 2, 3]</p>
-    <p>Pittsburgh, PA | Vancouver, BC [cite: 5, 8]</p>
+    <p>Kaiwen Li | <a href="mailto:kl5@andrew.cmu.edu">kl5@andrew.cmu.edu</a> | [cite_start]1-778-680-8550 [cite: 2, 3, 4]</p>
 </footer>
 
 </body>
