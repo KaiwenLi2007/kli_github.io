@@ -2,242 +2,130 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kaiwen Li | Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --primary-red: #C41230; 
-            --dark-bg: #0b0f1a;
-            --glass: rgba(255, 255, 255, 0.03);
-            --glass-border: rgba(255, 255, 255, 0.1);
-            --text-light: #f8fafc;
-            --accent-blue: #38bdf8;
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--dark-bg);
-            background-image: 
-                radial-gradient(circle at 0% 0%, rgba(196, 18, 48, 0.15) 0%, transparent 35%),
-                radial-gradient(circle at 100% 100%, rgba(56, 189, 248, 0.1) 0%, transparent 35%);
-            color: var(--text-light);
-            line-height: 1.6;
-        }
-
-        /* --- STICKY HEAD BAR --- */
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            height: 70px;
-            background: rgba(11, 15, 26, 0.8);
-            backdrop-filter: blur(15px);
-            border-bottom: 1px solid var(--glass-border);
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            z-index: 1000;
-            padding: 0 20px;
-        }
-
-        .nav-logo {
-            font-weight: 800;
-            font-size: 1.2rem;
-            letter-spacing: -1px;
-            color: var(--primary-red);
-            text-decoration: none;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 30px;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: #94a3b8;
-            font-size: 0.9rem;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: var(--text-light);
-        }
-
-        /* --- LAYOUT --- */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 120px 20px 60px; /* Top padding for the nav bar */
-        }
-
-        header {
-            text-align: center;
-            margin-bottom: 80px;
-        }
-
-        h1 {
-            font-size: clamp(3rem, 8vw, 5rem);
-            font-weight: 800;
-            letter-spacing: -3px;
-            background: linear-gradient(to bottom, #fff 40%, #64748b);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 10px;
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-        }
-
-        .card {
-            background: var(--glass);
-            border: 1px solid var(--glass-border);
-            border-radius: 32px;
-            padding: 35px;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
-
-        .card:hover {
-            background: rgba(255, 255, 255, 0.06);
-            border-color: var(--primary-red);
-            transform: scale(1.02);
-        }
-
-        .span-2 { grid-column: span 2; }
-        .span-3 { grid-column: span 3; }
-
-        h2 {
-            color: var(--primary-red);
-            margin-bottom: 25px;
-            font-size: 1.4rem;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .item { margin-bottom: 25px; }
-        .item h3 { font-size: 1.1rem; margin-bottom: 5px; }
-        .date { font-family: 'Fira Code', monospace; font-size: 0.8rem; color: var(--accent-blue); display: block; margin-bottom: 5px; }
+        :root { --bg: #0d1117; --card: #161b22; --text: #c9d1d9; --sub: #8b949e; --border: #30363d; --highlight: #f0f6fc; }
         
-        .tag {
-            display: inline-block;
-            background: rgba(255,255,255,0.05);
-            padding: 6px 14px;
-            border-radius: 100px;
-            font-size: 0.75rem;
-            margin: 4px;
-            border: 1px solid var(--glass-border);
+        body { 
+            background: var(--bg); 
+            color: var(--text); 
+            font-family: -apple-system, system-ui, "Segoe UI", sans-serif; /* Matched to Home */
+            margin: 0; 
+            display: flex;
+            min-height: 100vh;
         }
 
-        @media (max-width: 900px) {
-            .grid { grid-template-columns: 1fr; }
-            .span-2, .span-3 { grid-column: span 1; }
-            .nav-links { display: none; } /* Hide links on mobile for simplicity */
+        nav { 
+            border-right: 1px solid var(--border); 
+            padding: 3rem 2rem; 
+            display: flex; 
+            flex-direction: column;
+            justify-content: flex-start; 
+            gap: 1.5rem; 
+            background: var(--bg); 
+            position: sticky; 
+            top: 0;
+            height: 100vh;
+            width: 220px;
+            min-width: 220px;
+            box-sizing: border-box;
+        }
+
+        nav a { color: var(--sub); text-decoration: none; font-size: 1.1rem; font-weight: 500; }
+        nav a:hover, .active { color: var(--highlight); }
+
+        .container { 
+            flex-grow: 1;
+            max-width: 750px; 
+            margin: 80px auto; /* Matched margin to Home */
+            padding: 0 40px; 
+        }
+
+        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 20px; }
+        .card { border: 1px solid var(--border); padding: 1.5rem; border-radius: 6px; }
+        h2 { color: var(--highlight); }
+        h3 { color: var(--highlight); margin-top: 0; font-size: 1rem; }
+        .tag { display: inline-block; border: 1px solid var(--border); padding: 2px 8px; border-radius: 4px; font-size: 0.8rem; margin: 0 4px 8px 0; font-family: monospace; }
+
+        @media (max-width: 850px) {
+            body { flex-direction: column; }
+            nav { width: 100%; height: auto; flex-direction: row; border-right: none; border-bottom: 1px solid var(--border); position: relative; padding: 1.5rem; justify-content: center; gap: 1.5rem; }
+            .container { margin: 40px auto; }
+        }
+        
+
+        h1 { font-size: 2rem; color: var(--highlight); letter-spacing: -0.5px; }
+        .code-block { background: #010409; border: 1px solid var(--border); border-radius: 6px; padding: 1.5rem; font-family: "SFMono-Regular", Consolas, monospace; font-size: 0.85rem; margin-top: 2rem; }
+        .contact { color: var(--sub); margin-top: 1rem; font-family: monospace; }
+
+        .profile-header {
+            display: flex;
+            align-items: center; 
+            gap: 25px;           
+            margin-bottom: 30px;
+        }
+
+        .header-img {
+            width: 100px;        
+            height: 100px;
+            border-radius: 50%;  
+            border: 1px solid var(--border);
+            object-fit: cover;
+        }
+
+        .header-text h1 {
+            margin: 0;           
+            line-height: 1.2;
+        }
+
+        .tagline {
+            color: var(--sub);
+            margin: 5px 0;
+            font-weight: 500;
+        }
+
+        /* Mobile Responsiveness */
+      
+
+        @media (max-width: 600px) {
+            .profile-header {
+                flex-direction: column;
+                text-align: center;
+            }
+            nav { gap: 1rem; font-size: 0.9rem; }
         }
     </style>
 </head>
 <body>
-
     <nav>
-        <a href="#" class="nav-logo">KAIWEN LI</a>
-        <div class="nav-links">
-            <a href="#education">Education</a>
-            <a href="#honors">Honors</a>
-            <a href="#experience">Experience</a>
-            <a href="#skills">Skills</a>
-        </div>
+        <a href="index.html" class="active">~/home</a>
+        <a href="education.html">~/education</a>
+        <a href="experience.html">~/experience</a>
+        <a href="honors.html">~/mathematical experience</a>
+         <a href="interests.html">~/interests</a>
     </nav>
-
     <div class="container">
-        <header>
-            <h1>Kaiwen Li</h1> <p style="color: #94a3b8; font-size: 1.1rem;">
-                Mathematics @ Carnegie Mellon University </p>
-            <p style="font-family: 'Fira Code', monospace; margin-top: 15px; font-size: 0.9rem;">
-                kl5@andrew.cmu.edu • 1-778-680-8550 </p>
-        </header>
+    <header class="profile-header">
+        <img src="381769150556_.pic.jpg" alt="Kaiwen Li" class="header-img">
+        
+        <div class="header-text">
+            <h1>Kaiwen Li</h1>
+            <p class="tagline">Mathematics @ Carnegie Mellon University</p>
+            <div class="contact">
+                kl5@andrew.cmu.edu • 1-412-891-5688
+            </div>
+        </div>
+    </header>
 
-        <main class="grid">
-            <section id="education" class="card span-2">
-                <h2>Education</h2>
-                <div class="item">
-                    <span class="date">Expected May 2029</span> <h3>Carnegie Mellon University</h3> <p>B.S. Mathematics, Discrete Mathematics and Logic [cite: 6]</p>
-                    <p style="font-size: 0.85rem; color: #94a3b8; margin-top: 8px;">
-                        Relevant Coursework: Principles of Functional Programming, Matrices and Linear Transformation, Vector Calculus with Matrix Algebra, Multivariable Calculus, Principles of Imperative Computation, Mathematical Foundations for Computer Science[cite: 7].
-                    </p>
-                </div>
-                <div class="item">
-                    <span class="date">Sept 2021 – May 2025</span> <h3>Lord Byng Secondary School</h3> <p>GPA: 96/100  | Principal's List (2022-2024) [cite: 9]</p>
-                </div>
-            </section>
-
-            <section id="skills" class="card">
-                <h2>Technical</h2>
-                <div style="margin-bottom: 20px;">
-                    <span class="tag">Java</span> <span class="tag">Python</span> <span class="tag">C++</span> <span class="tag">LaTeX</span> <span class="tag">Data Analysis</span> <span class="tag">Number Theory</span> <span class="tag">Discrete Mathematics</span> </div>
-                <h3>Languages</h3>
-                <p style="font-size: 0.9rem; color: #94a3b8;">
-                    Mandarin (Fluent), English (Fluent), Spanish (Limited)[cite: 34].
-                </p>
-            </section>
-
-            <section id="honors" class="card span-3">
-                <h2>Mathematical Honors</h2>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px;">
-                    <div class="item">
-                        <h4 style="color: var(--accent-blue);">USAMO Qualifier</h4> <span class="date">2024</span> </div>
-                    <div class="item">
-                        <h4 style="color: var(--accent-blue);">3x AIME Qualifier</h4> <p style="font-size: 0.9rem;">Highest Score: 12/15 (2022-2024) [cite: 29]</p>
-                    </div>
-                    <div class="item">
-                        <h4 style="color: var(--accent-blue);">Euclid Math Contest</h4> <p style="font-size: 0.9rem;">Score: 89, Top 2.5% [cite: 32]</p>
-                    </div>
-                    <div class="item">
-                        <h4 style="color: var(--accent-blue);">AMC 12 Honor Roll</h4> <p style="font-size: 0.9rem;">Distinction (2022, 2023) [cite: 31]</p>
-                    </div>
-                </div>
-            </section>
-
-            <section id="experience" class="card span-2">
-                <h2>Professional Experience</h2>
-                <div class="item">
-                    <span class="date">March 2023 – Present</span> <h3>Snowboard Instructor (Self-Employed)</h3> <p style="font-size: 0.9rem; color: #94a3b8;">
-                        Certified instruction and advanced training in carving and park abilities.
-                    </p>
-                </div>
-                <div class="item">
-                    <span class="date">March 2022 – March 2025</span> <h3>Teaching Assistant | Kerrisdale Academy</h3> <p style="font-size: 0.9rem; color: #94a3b8;">
-                        Assisted in AP Statistics, AP Calculus BC, and AP Physics C; supported instruction and grading[cite: 26, 27].
-                    </p>
-                </div>
-            </section>
-
-            <section class="card">
-                <h2>Involvement</h2>
-                <ul style="list-style: none; font-size: 0.9rem; color: #94a3b8;">
-                    <li style="margin-bottom: 10px;">• CMU Quant & Math Clubs [cite: 37, 38]</li>
-                    <li style="margin-bottom: 10px;">• SUMaC Stanford [cite: 12]</li>
-                    <li style="margin-bottom: 10px;">• UBC Math Circle [cite: 13]</li>
-                    <li>• NSLC Engineering [cite: 17]</li>
-                </ul>
-            </section>
-        </main>
-
-        <footer style="text-align: center; margin-top: 80px; padding-top: 40px; border-top: 1px solid var(--glass-border); color: #64748b; font-size: 0.8rem;">
-            <p>© 2026 Kaiwen Li | Carnegie Mellon University [cite: 2, 5]</p>
-        </footer>
+    <p>Mathematics student specializing in Discrete Mathematics and Logic. Passionate about abstract reasoning, functional programming, and teaching.</p>
+    
+    <div class="code-block">
+        <span style="color: #ff7b72;">const</span> profile = {<br>
+        &nbsp;&nbsp;location: <span style="color: #a5d6ff;">"Pittsburgh, PA"</span>,<br>
+        &nbsp;&nbsp;major: [<span style="color: #a5d6ff;">"Discrete Math and Logic"</span>],<br>
+        &nbsp;&nbsp;status: <span style="color: #a5d6ff;">"Active Freshman"</span><br>
+        };
     </div>
-
+</div>
 </body>
 </html>

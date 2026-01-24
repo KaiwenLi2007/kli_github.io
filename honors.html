@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>More Experience | Kaiwen Li</title>
+    <style>
+        :root { --bg: #0d1117; --card: #161b22; --text: #c9d1d9; --sub: #8b949e; --border: #30363d; --highlight: #f0f6fc; }
+        
+        body { 
+            background: var(--bg); 
+            color: var(--text); 
+            font-family: -apple-system, system-ui, "Segoe UI", sans-serif; /* Matched to Home */
+            margin: 0; 
+            display: flex;
+            min-height: 100vh;
+        }
+
+        nav { 
+            border-right: 1px solid var(--border); 
+            padding: 3rem 2rem; 
+            display: flex; 
+            flex-direction: column;
+            justify-content: flex-start; 
+            gap: 1.5rem; 
+            background: var(--bg); 
+            position: sticky; 
+            top: 0;
+            height: 100vh;
+            width: 220px;
+            min-width: 220px;
+            box-sizing: border-box;
+        }
+
+        nav a { color: var(--sub); text-decoration: none; font-size: 1.1rem; font-weight: 500; }
+        nav a:hover, .active { color: var(--highlight); }
+
+        .container { 
+            flex-grow: 1;
+            max-width: 750px; 
+            margin: 80px auto; /* Matched margin to Home */
+            padding: 0 40px; 
+        }
+
+        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 20px; }
+        .card { border: 1px solid var(--border); padding: 1.5rem; border-radius: 6px; }
+        h2 { color: var(--highlight); }
+        h3 { color: var(--highlight); margin-top: 0; font-size: 1rem; }
+        .tag { display: inline-block; border: 1px solid var(--border); padding: 2px 8px; border-radius: 4px; font-size: 0.8rem; margin: 0 4px 8px 0; font-family: monospace; }
+
+        @media (max-width: 850px) {
+            body { flex-direction: column; }
+            nav { width: 100%; height: auto; flex-direction: row; border-right: none; border-bottom: 1px solid var(--border); position: relative; padding: 1.5rem; justify-content: center; gap: 1.5rem; }
+            .container { margin: 40px auto; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html">~/home</a>
+        <a href="education.html">~/education</a>
+        <a href="experience.html">~/experience</a>
+        <a href="honors.html">~/mathematical experience</a>
+        <a href="interests.html">~/interests</a>
+    </nav>
+    <div class="container">
+        <h2>Mathematical Experience</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>USAMO Qualifier</h3>
+                <p style="font-size: 0.85rem; color: var(--sub);">Qualified in 2024</p>
+            </div>
+            <div class="card">
+                <h3>3x AIME Qualifier</h3>
+                <p style="font-size: 0.85rem; color: var(--sub);">Highest Score: 12/15</p>
+            </div>
+            <div class="card">
+                <h3>Stanford University Mathematics Camp (SUMaC)</h3>
+                <p style="font-size: 0.85rem; color: var(--sub);">Number Theory and Abstract Algebra</p>
+            </div>
+            <div class="card">
+                <h3>Euclid Math Contest</h3>
+                <p style="font-size: 0.85rem; color: var(--sub);">Score: 89 (Top 2.5% globally)</p>
+            </div>
+        </div>
+
+        <h2 style="margin-top: 3rem;">Technical Toolkit</h2>
+        <div class="skill-group">
+            <span class="tag">Java</span> <span class="tag">Python</span> 
+            <span class="tag">C++</span> <span class="tag">LaTeX</span>
+            <span class="tag">Discrete Mathematics</span> <span class="tag">Number Theory</span>
+        </div>
+
+        <h3>Languages</h3>
+        <p style="color: var(--sub); font-size: 0.9rem;">Mandarin (Fluent), English (Fluent), Spanish (Limited Working Proficiency)</p>
+    </div>
+</body>
+</html>
