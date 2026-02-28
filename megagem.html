@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>News Intelligence Engine | Kaiwen Li</title>
+    <title>MegaGem Live | Kaiwen Li</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -149,13 +149,6 @@
             text-decoration: underline;
         }
 
-        .project-img {
-            width: 100%;
-            border-radius: 8px;
-            border: 1px solid var(--border);
-            margin-bottom: 2rem;
-        }
-
         .code-block {
             background: #010409;
             border: 1px solid var(--border);
@@ -174,6 +167,27 @@
 
         li {
             margin-bottom: 0.5rem;
+        }
+
+        .btn-link {
+            display: inline-block;
+            color: var(--highlight);
+            text-decoration: none;
+            border: 1px solid var(--border);
+            padding: 0.75rem 1.25rem;
+            border-radius: 6px;
+            background: var(--card);
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.95rem;
+            margin-right: 1rem;
+            margin-bottom: 1rem;
+            transition: all 0.2s;
+        }
+
+        .btn-link:hover {
+            border-color: #58a6ff;
+            background: #1f2a36;
+            text-decoration: none;
         }
 
         @media (max-width: 850px) {
@@ -213,8 +227,8 @@
         <a href="interests.html">~/interests</a>
         <a href="https://arcg.is/04Xv9r" target="_blank">~/asset management project</a>
         <a href="https://kaiwenli1000.wixsite.com/adopt-our-community" target="_blank">~/community project</a>
-        <a href="news.html" class="active">~/news intelligence engine</a>
-        <a href="megagem.html">~/MegaGem Live</a>
+        <a href="news.html">~/news intelligence engine</a>
+        <a href="megagem.html" class="active">~/MegaGem Live</a>
 
         <footer class="sidebar-footer">
             <p>kl5@andrew.cmu.edu </p>
@@ -223,92 +237,46 @@
         </footer>
     </nav>
     <div class="container">
-        <h1>News Intelligence Engine</h1>
+        <h1>MegaGem Live</h1>
 
-        <img src="15113 HW 4.png" alt="News Intelligence Engine" class="project-img">
+        <p>An interactive auction strategy game (1 human vs 2 AI players). Read hidden gem signals, win key auctions,
+            and optimize final value. Built entirely from scratch using Python (Flask/Socket.IO) and Vanilla JavaScript.
+            It features real-time multiplayer bidding, automated AI opponents, and an integrated Gemini-powered AI Tutor
+            that offers in-game predictions and gameplay insights.</p>
 
-        <p>A full-stack application that leverages AI to synthesize global event data into actionable intelligence.</p>
-
-        <p><strong>Live Demo:</strong> <a href="https://backend-and-frontend-kl5.onrender.com"
-                target="_blank">https://backend-and-frontend-kl5.onrender.com</a></p>
-
-        <h2>Project Structure</h2>
-        <p>This project is organized into two main components:</p>
-        <ul>
-            <li><strong>backend/</strong>: Contains the Flask application logic and database.
-                <ul>
-                    <li><code>app.py</code>: Main server file.</li>
-                    <li><code>news.db</code>: SQLite database.</li>
-                    <li><code>requirements.txt</code>: Python dependencies.</li>
-                    <li><code>prompt_history.txt</code>: Archive of AI prompts.</li>
-                </ul>
-            </li>
-            <li><strong>frontend/</strong>: Contains the user interface assets.
-                <ul>
-                    <li><code>templates/</code>: HTML templates served by Flask.</li>
-                    <li><code>static/</code>: Static assets (CSS, JS, images).</li>
-                </ul>
-            </li>
-            <li><strong>render.yaml</strong>: Deployment configuration for Render.</li>
-        </ul>
+        <div style="margin-top: 1.5rem; margin-bottom: 2rem;">
+            <a href="https://kaiwenli2007.github.io/MegaGem_Live/" target="_blank" class="btn-link">~/Landing Page</a>
+            <a href="https://megagem-live.onrender.com" target="_blank" class="btn-link">~/Live Game</a>
+        </div>
 
         <h2>Features</h2>
         <ul>
-            <li><strong>Real-Time Analysis</strong>: Fetches maximum relevance articles via NewsAPI.</li>
-            <li><strong>AI Synthesis</strong>: Uses Google Gemini 2.0 Flash to generate analyst assessments and key
-                points.</li>
-            <li><strong>History Tracking</strong>: Saves searches to a local SQLite database.</li>
+            <li><strong>Start Game</strong> — Full game with real-time bidding, reveals, and end-round scoring.</li>
+            <li><strong>Play with Tutor</strong> — Same game plus an in-game coach (Gemini) and a <strong>prediction
+                    chart</strong> of estimated gem values from public info (via QuickChart No-Code API).</li>
+            <li><strong>Learn How to Play</strong> — Step-by-step tutorial and Q&A with an AI tutor.</li>
         </ul>
 
-        <h2>Setup Instructions</h2>
-
-        <h3>Prerequisites</h3>
+        <h2>Tech Stack</h2>
         <ul>
-            <li>Python 3.10+</li>
-            <li>API Keys: <a href="https://newsapi.org/" target="_blank">NewsAPI</a> & <a href="https://ai.google.dev/"
-                    target="_blank">Google Gemini</a></li>
+            <li><strong>Backend:</strong> Python, Flask, Flask-SocketIO, eventlet</li>
+            <li><strong>AI:</strong> Google Gemini (tutor + in-game coach + AI bidders)</li>
+            <li><strong>Frontend:</strong> Vanilla JS, Socket.IO client</li>
+            <li><strong>Charts:</strong> QuickChart API</li>
         </ul>
 
-        <h3>Local Development</h3>
-        <ol>
-            <li>
-                <strong>Clone the repository:</strong>
-                <div class="code-block">
-                    git clone https://github.com/KaiwenLi2007/backend_and_frontend.git
-                    cd backend_and_frontend
-                </div>
-            </li>
-            <li>
-                <strong>Navigate to Backend & Install Dependencies:</strong>
-                <div class="code-block">
-                    cd backend
-                    pip install -r requirements.txt
-                </div>
-            </li>
-            <li>
-                <strong>Configure Environment:</strong>
-                <p>Create a <code>.env</code> file in the <code>backend/</code> directory:</p>
-                <div class="code-block">
-                    NEWS_API_KEY=your_news_api_key_here
-                    GEMINI_API_KEY=your_gemini_api_key_here
-                </div>
-            </li>
-            <li>
-                <strong>Run the App:</strong>
-                <div class="code-block">
-                    python app.py
-                </div>
-                <p>Access the app at <code>http://127.0.0.1:5000</code>.</p>
-            </li>
-        </ol>
-
-        <h2>Deployment (Render)</h2>
-        <p>The included <code>render.yaml</code> handles deployment automatically.</p>
-        <ol>
-            <li>Connect your GitHub repository to Render.</li>
-            <li>Add Environment Variables (<code>NEWS_API_KEY</code>, <code>GEMINI_API_KEY</code>) in the Render
-                Dashboard.</li>
-        </ol>
+        <h2>Game Rules (Short)</h2>
+        <ul>
+            <li>3 players (you + 2 AI). Everyone starts with <strong>35 coins</strong>.</li>
+            <li><strong>30 gems</strong> (5 types: Gold, Sapphire, Jade, Onyx, Opal), 6 of each. At round start
+                <strong>15 are removed</strong> and split as private info (5 per player).</li>
+            <li>Auctions use a deck of action cards (Win 1 Gem, Win 2 Gems, Invest, Loan, etc.). Highest bid wins and
+                pays; ties go to lower player ID.</li>
+            <li>When you win, you <strong>reveal one private removed gem</strong>; that info is public and affects
+                everyone’s estimates.</li>
+            <li><strong>Gem value</strong> at end of round = (total removed count for that type) × 4. Final score =
+                coins + investment + bonus − loans + gem worth.</li>
+        </ul>
     </div>
 </body>
 
