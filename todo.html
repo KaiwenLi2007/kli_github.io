@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>News Intelligence Engine | Kaiwen Li</title>
+    <title>To-Do List Planner | Kaiwen Li</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -149,13 +149,6 @@
             text-decoration: underline;
         }
 
-        .project-img {
-            width: 100%;
-            border-radius: 8px;
-            border: 1px solid var(--border);
-            margin-bottom: 2rem;
-        }
-
         .code-block {
             background: #010409;
             border: 1px solid var(--border);
@@ -213,8 +206,8 @@
         <a href="interests.html">~/interests</a>
         <a href="https://arcg.is/04Xv9r" target="_blank">~/asset management project</a>
         <a href="https://kaiwenli1000.wixsite.com/adopt-our-community" target="_blank">~/community project</a>
-        <a href="news.html" class="active">~/news intelligence engine</a>
-        <a href="todo.html">~/To-Do List Planner</a>
+        <a href="news.html">~/news intelligence engine</a>
+        <a href="todo.html" class="active">~/To-Do List Planner</a>
         <a href="megagem.html">~/MegaGem Live</a>
 
         <footer class="sidebar-footer">
@@ -224,92 +217,22 @@
         </footer>
     </nav>
     <div class="container">
-        <h1>News Intelligence Engine</h1>
+        <h1>To-Do List Planner</h1>
 
-        <img src="15113 HW 4.png" alt="News Intelligence Engine" class="project-img">
+        <p>A task manager that tracks <strong>course assignments and deadlines</strong> with <strong>estimated hours</strong>, so you can see what’s due soon and how much work each task needs. It assigns an <strong>urgency level</strong> (HIGH / MEDIUM / LOW) from the time left until the deadline and the estimated hours, so you can focus on the most pressing items first.</p>
 
-        <p>A full-stack application that leverages AI to synthesize global event data into actionable intelligence.</p>
+        <p><strong>Code:</strong> <a href="https://github.com/KaiwenLi2007/todo_list_sql_project" target="_blank">github.com/KaiwenLi2007/todo_list_sql_project</a></p>
 
-        <p><strong>Live Demo:</strong> <a href="https://backend-and-frontend-kl5.onrender.com"
-                target="_blank">https://backend-and-frontend-kl5.onrender.com</a></p>
+        <h2>How to run</h2>
+        <p>Install dependencies, then run the web app or CLI:</p>
+        <div class="code-block">
+            python3 -m pip install -r requirements.txt
+            python3 app.py
+        </div>
+        <p>Open <strong>http://127.0.0.1:5000</strong> in your browser for the web app, or run <code>python3 main.py</code> for the terminal menu.</p>
 
-        <h2>Project Structure</h2>
-        <p>This project is organized into two main components:</p>
-        <ul>
-            <li><strong>backend/</strong>: Contains the Flask application logic and database.
-                <ul>
-                    <li><code>app.py</code>: Main server file.</li>
-                    <li><code>news.db</code>: SQLite database.</li>
-                    <li><code>requirements.txt</code>: Python dependencies.</li>
-                    <li><code>prompt_history.txt</code>: Archive of AI prompts.</li>
-                </ul>
-            </li>
-            <li><strong>frontend/</strong>: Contains the user interface assets.
-                <ul>
-                    <li><code>templates/</code>: HTML templates served by Flask.</li>
-                    <li><code>static/</code>: Static assets (CSS, JS, images).</li>
-                </ul>
-            </li>
-            <li><strong>render.yaml</strong>: Deployment configuration for Render.</li>
-        </ul>
-
-        <h2>Features</h2>
-        <ul>
-            <li><strong>Real-Time Analysis</strong>: Fetches maximum relevance articles via NewsAPI.</li>
-            <li><strong>AI Synthesis</strong>: Uses Google Gemini 2.0 Flash to generate analyst assessments and key
-                points.</li>
-            <li><strong>History Tracking</strong>: Saves searches to a local SQLite database.</li>
-        </ul>
-
-        <h2>Setup Instructions</h2>
-
-        <h3>Prerequisites</h3>
-        <ul>
-            <li>Python 3.10+</li>
-            <li>API Keys: <a href="https://newsapi.org/" target="_blank">NewsAPI</a> & <a href="https://ai.google.dev/"
-                    target="_blank">Google Gemini</a></li>
-        </ul>
-
-        <h3>Local Development</h3>
-        <ol>
-            <li>
-                <strong>Clone the repository:</strong>
-                <div class="code-block">
-                    git clone https://github.com/KaiwenLi2007/backend_and_frontend.git
-                    cd backend_and_frontend
-                </div>
-            </li>
-            <li>
-                <strong>Navigate to Backend & Install Dependencies:</strong>
-                <div class="code-block">
-                    cd backend
-                    pip install -r requirements.txt
-                </div>
-            </li>
-            <li>
-                <strong>Configure Environment:</strong>
-                <p>Create a <code>.env</code> file in the <code>backend/</code> directory:</p>
-                <div class="code-block">
-                    NEWS_API_KEY=your_news_api_key_here
-                    GEMINI_API_KEY=your_gemini_api_key_here
-                </div>
-            </li>
-            <li>
-                <strong>Run the App:</strong>
-                <div class="code-block">
-                    python app.py
-                </div>
-                <p>Access the app at <code>http://127.0.0.1:5000</code>.</p>
-            </li>
-        </ol>
-
-        <h2>Deployment (Render)</h2>
-        <p>The included <code>render.yaml</code> handles deployment automatically.</p>
-        <ol>
-            <li>Connect your GitHub repository to Render.</li>
-            <li>Add Environment Variables (<code>NEWS_API_KEY</code>, <code>GEMINI_API_KEY</code>) in the Render
-                Dashboard.</li>
-        </ol>
+        <h2>Tech</h2>
+        <p>SQLite (<code>course_manager.db</code>), Flask, and a simple urgency engine. Full CRUD: add tasks, view by date or urgency, update estimated hours, delete tasks. Urgency is computed from deadline and estimated hours (e.g. HIGH when buffer &lt; 12 hours).</p>
     </div>
 </body>
 
